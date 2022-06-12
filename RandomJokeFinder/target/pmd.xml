@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.29.0" timestamp="2022-06-11T12:46:03.421">
+<file name="C:\RandomJokeFinder\src\main\java\nl\ns\task\jokefinder\domain\model\Flags.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.domain.model" class="Flags" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'lombok.Getter'
+</violation>
+</file>
+<file name="C:\RandomJokeFinder\src\main\java\nl\ns\task\jokefinder\domain\model\Jokes.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.domain.model" class="Jokes" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'lombok.Getter'
+</violation>
+</file>
+<file name="C:\RandomJokeFinder\src\main\java\nl\ns\task\jokefinder\domain\model\Root.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.domain.model" class="Root" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'lombok.Getter'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="40" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.domain.model" class="Root" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'nl.ns.task.jokefinder.model.Joke'
+</violation>
+</file>
+<file name="C:\RandomJokeFinder\src\main\java\nl\ns\task\jokefinder\mapper\JokesMessagesExchangeMapper.java">
+<violation beginline="42" endline="42" begincolumn="31" endcolumn="104" rule="UselessParentheses" ruleset="Code Style" package="nl.ns.task.jokefinder.mapper" class="JokesMessagesExchangeMapper" method="jokesMessageInfraToDomainJokesMessageConverter" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="C:\RandomJokeFinder\src\main\java\nl\ns\task\jokefinder\route\JokeFinderRoute.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="22" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.List'
+</violation>
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="26" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.Optional'
+</violation>
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="35" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.stream.Collectors'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="48" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'nl.ns.task.jokefinder.domain.model.Jokes'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="47" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'nl.ns.task.jokefinder.domain.model.Root'
+</violation>
+<violation beginline="10" endline="10" begincolumn="1" endcolumn="33" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.apache.camel.Exchange'
+</violation>
+<violation beginline="11" endline="11" begincolumn="1" endcolumn="34" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.apache.camel.Processor'
+</violation>
+<violation beginline="17" endline="17" begincolumn="1" endcolumn="51" rule="UnusedImports" ruleset="Best Practices" package="nl.ns.task.jokefinder.route" class="JokeFinderRoute" externalInfoUrl="https://pmd.github.io/pmd-6.29.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'org.springframework.web.client.RestTemplate'
+</violation>
+</file>
+</pmd>
