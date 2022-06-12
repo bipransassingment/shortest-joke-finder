@@ -1,0 +1,165 @@
+openapi: 3.0.1
+info:
+  version: "1.0"
+  title:  Random JokeFinder API
+  description:  |
+    This document describes the Random JokeFinder API
+    The Random JokeFinder application retrives the shortest joke.
+
+
+paths:
+  /random-joke-finder/v1/joke:
+    get:
+      tags:
+        - RandomJokeFInder
+      summary: Retrieve random shortest joke
+      description: |
+        This API is used to Retrieve random shortest joke.
+      operationId: getRandomJoke
+      responses:
+        200:
+          description: Success response
+          headers:
+            requestId:
+              description: requestId
+              schema:
+                type: string
+            transactionId:
+              description: transactionId
+              schema:
+                type: string
+            businessTransactionId:
+              description: businessTransactionId
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Joke'
+              example:
+                - id: 1
+                  randomJoke: 'Any Random Joke'
+
+        400:
+          description: Bad request
+          headers:
+            transactionId:
+              description: transactionId
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                statusCode: 400
+                statusMessage: 'Bad Request'
+                apiErrorCode: '400001'
+                apiErrorReason: 'Invalid request'
+        403:
+          description: Forbidden
+          headers:
+            transactionId:
+              description: transactionId
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                statusCode: 403
+                statusMessage: 'Forbidden'
+                apiErrorCode: '403003'
+                apiErrorReason: 'Invalid token'
+        404:
+          description: Not Found
+          headers:
+            transactionId:
+              description: transactionId
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                statusCode: 404
+                statusMessage: 'Not Found'
+                apiErrorCode: '404001'
+                apiErrorReason: 'Appointments not found'
+        500:
+          description: Server encountered unexpected condition
+          headers:
+            transactionId:
+              description: transactionId
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                statusCode: 500
+                statusMessage: 'Internal Server Error'
+
+components:
+  schemas:
+    Joke:
+      type: object
+      properties:
+        randomJoke:
+          type: string
+          description: randomJoke
+        id:
+          type: integer
+          description: id
+    Error:
+      type: object
+      properties:
+        method:
+          type: string
+          description: http method used.
+        uri:
+          type: string
+          description: url of the request been done.
+        query:
+          type: string
+          description: query parameters sent
+        contentType:
+          type: string
+          description: content type
+        statusCode:
+          type: string
+          description: http status code.
+        statusMessage:
+          type: string
+          description: message
+        errorMessage:
+          type: string
+          description: (optional) error message.
+        apiErrorCode:
+          type: string
+          description: error code
+        apiErrorReason:
+          type: string
+          description: error reason code.
+
+    HttpResponseTestSpec:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          description: http status code for simulating codes 40x and 50x from the backend
+        delay:
+          type: integer
+          description: delay to be added to the response time
+        chunkedDelay:
+          type: integer
+          description: delay to be added to the response time
+        code:
+          type: string
+          description: error code from backend
+        reason:
+          type: string
+          description: error reason from backend
