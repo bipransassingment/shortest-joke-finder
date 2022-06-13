@@ -1,21 +1,15 @@
 package nl.ns.task.jokefinder.route;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import nl.ns.task.jokefinder.domain.model.Jokes;
 import nl.ns.task.jokefinder.domain.model.Root;
 import nl.ns.task.jokefinder.exception.GenericExceptionHandler;
 import nl.ns.task.jokefinder.mapper.JokesMessagesExchangeMapper;
 import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Post Cancel Route.
@@ -41,9 +35,9 @@ public class JokeFinderRoute extends RouteBuilder {
         .to("https://v2.jokeapi.dev/joke/Any?bridgeEndpoint=true")
         .id("getJokesRouteEndpoint")
         .unmarshal().json(JsonLibrary.Jackson, Root.class)
-        .bean(JokesMessagesExchangeMapper.BEAN,JokesMessagesExchangeMapper.TO_DOMAIN_METHOD)
+        .bean(JokesMessagesExchangeMapper.BEAN, JokesMessagesExchangeMapper.TO_DOMAIN_METHOD)
         .id("afterdomain")
-        .bean(JokesMessagesExchangeMapper.BEAN,JokesMessagesExchangeMapper.TO_Response_Object_METHOD)
+        .bean(JokesMessagesExchangeMapper.BEAN, JokesMessagesExchangeMapper.TO_Response_Object_METHOD)
         .id("mintNumberPortingCancelRouteEndpoint");
 
 

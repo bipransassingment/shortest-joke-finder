@@ -2,11 +2,13 @@ package nl.ns.task.jokefinder.domain.model;
 
 import java.util.ArrayList;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import nl.ns.task.jokefinder.model.Joke;
 
+
+/**
+ * Utility class.
+ */
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor

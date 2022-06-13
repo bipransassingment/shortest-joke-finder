@@ -10,7 +10,6 @@ import nl.ns.task.jokefinder.exception.BlankDataReturnedFromServerException;
 import nl.ns.task.jokefinder.model.Joke;
 import org.apache.camel.Exchange;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * NumberPortingCancelMessageExchangeMapper.
@@ -38,16 +37,18 @@ public class JokesMessagesExchangeMapper {
     var response = (Root) exchange.getIn().getBody();
     List<Jokes> response2 =
         response.getJokes().stream()
-            .filter(jokes -> (jokes.getFlags().isSexist() ==true || jokes.getFlags().isExplicit() ==true))
+            .filter(jokes -> jokes.getFlags().isSexist() == true || jokes.getFlags().isExplicit() == true)
             .collect(Collectors.toList());
     response.getJokes().removeAll(response2);
 
     Optional<Jokes> smallestJoke = response.getJokes().stream()
-        .sorted( (i1, i2) -> {
-          if(i1.getJoke().length() > i2.getJoke().length())
+        .sorted((i1, i2) -> {
+          if (i1.getJoke().length() > i2.getJoke().length()) {
             return 1;
-          else return -1;
-        } )
+          } else {
+            return -1;
+          }
+        })
         .collect(Collectors.toList())
         .stream().findFirst();
     System.out.println("Response " + smallestJoke.get().getJoke());
@@ -64,7 +65,7 @@ public class JokesMessagesExchangeMapper {
 
     Optional<Jokes> message = (Optional<Jokes>) exchange.getIn().getBody();
 
-    if (message.get().getId()==0 || message.get().getJoke() == "") {
+    if (message.get().getId() == 0 || message.get().getJoke() == "") {
       throw new BlankDataReturnedFromServerException("Cannot order: kaboom");
     }
 

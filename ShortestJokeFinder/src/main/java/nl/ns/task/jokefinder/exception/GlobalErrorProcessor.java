@@ -78,10 +78,8 @@ public class GlobalErrorProcessor implements Processor {
       error.setErrorMessage("Cannot connect to backend.");
 
       exchange.getIn().setHeader(Exchange.HTTP_RESPONSE_CODE, 500);
-    }else {
-
+    } else {
       exchange.getIn().setHeader(Exchange.HTTP_RESPONSE_CODE, 500);
-
     }
 
     exchange.getIn().setHeader(Exchange.CONTENT_TYPE, "application/json");

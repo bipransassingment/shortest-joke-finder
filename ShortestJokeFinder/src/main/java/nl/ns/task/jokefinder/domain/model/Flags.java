@@ -1,15 +1,18 @@
 package nl.ns.task.jokefinder.domain.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import nl.ns.task.jokefinder.model.Joke;
 
+
+
+/**
+ * Utility class.
+ */
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Flags extends Joke {
+public class Flags extends Jokes {
   public boolean nsfw;
   public boolean religious;
   public boolean political;

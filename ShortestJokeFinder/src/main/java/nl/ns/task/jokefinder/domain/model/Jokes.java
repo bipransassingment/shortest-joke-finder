@@ -1,12 +1,15 @@
 package nl.ns.task.jokefinder.domain.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * Utility class.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
-public class Jokes extends Root{
+public class Jokes extends Root {
 
   public void setCategory(String category) {
     this.category = category;
