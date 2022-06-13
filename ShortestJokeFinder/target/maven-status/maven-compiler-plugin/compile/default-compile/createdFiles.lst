@@ -1,6 +1,0 @@
-nl\ns\task\jokefinder\model\Error.class
-nl\ns\task\jokefinder\rest\RandomJokeFinderAPI.class
-nl\ns\task\jokefinder\rest\CamelRestController.class
-nl\ns\task\jokefinder\model\HttpResponseTestSpec.class
-org\openapitools\api\ApiUtil.class
-nl\ns\task\jokefinder\model\Joke.class
