@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ns-task-jokefinder-logback-spring-v1
+data:
+  logback-spring.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <configuration>
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            </encoder>
+        </appender>
+        <logger name="nl.vodafoneziggo" level="debug"/>
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </configuration>

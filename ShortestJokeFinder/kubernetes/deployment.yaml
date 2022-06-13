@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ns-task-jokefinder-v1
+  name:  ns-task-jokefinder-v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  ns-task-jokefinder-v1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app:  ns-task-jokefinder-v1
+    spec:
+      containers:
+      - name:  ns-task-jokefinder-v1
+        image: ns/jokefinder:latest
+        resources: {}
+        env:
+          - name:  HOST
+            value: "localhost:8085"
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 20
+          timeoutSeconds: 30
+          periodSeconds: 40
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 20
+          timeoutSeconds: 30
+          periodSeconds: 40
+        volumeMounts:
+        - name: config-logback
+          mountPath: /opt/mint/app/config/logback-spring.xml
+          subPath: logback-spring.xml
+      volumes:
+      - name: config-logback
+        configMap:
+          name: ns-task-jokefinder-logback-spring-v1
+status: {}

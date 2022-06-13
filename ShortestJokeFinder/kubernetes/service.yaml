@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ns-task-jokefinder-v1
+  labels:
+    app: ns-task-jokefinder-v1
+spec:
+  ports:
+  - name: 8080-8080
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: ns-task-jokefinder-v1
+  type: NodePort
