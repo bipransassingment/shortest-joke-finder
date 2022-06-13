@@ -10,6 +10,7 @@ import nl.ns.task.jokefinder.mapper.JokesMessagesExchangeMapper;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.dataformat.JsonLibrary;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,10 @@ public class JokeFinderRoute extends RouteBuilder {
     errorHandler(genericExceptionHandler.appErrorHandler());
 
     from("direct:getRandomJoke").id("routeRandomJokeRoute")
+        .setHeader(Exchange.HTTP_QUERY, simple("type=single&amount=16"))
+        .to("https://v2.jokeapi.dev/joke/Any?bridgeEndpoint=true")
+        .id("getJokesRouteEndpoint")
+        .unmarshal().json(JsonLibrary.Jackson, Root.class)
         .bean(JokesMessagesExchangeMapper.BEAN,JokesMessagesExchangeMapper.TO_DOMAIN_METHOD)
         .id("afterdomain")
         .bean(JokesMessagesExchangeMapper.BEAN,JokesMessagesExchangeMapper.TO_Response_Object_METHOD)

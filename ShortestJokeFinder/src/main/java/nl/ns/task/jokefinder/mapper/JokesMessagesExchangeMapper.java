@@ -35,8 +35,7 @@ public class JokesMessagesExchangeMapper {
   public void jokesMessageInfraToDomainJokesMessageConverter(Exchange exchange)
       throws JsonProcessingException {
 
-    RestTemplate restTemplate = new RestTemplate();
-    Root response = restTemplate.getForObject("https://v2.jokeapi.dev/joke/Any?type=single&amount=16", Root.class);
+    var response = (Root) exchange.getIn().getBody();
     List<Jokes> response2 =
         response.getJokes().stream()
             .filter(jokes -> (jokes.getFlags().isSexist() ==true || jokes.getFlags().isExplicit() ==true))
